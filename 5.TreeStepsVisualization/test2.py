@@ -1,8 +1,6 @@
 import uuid
 import networkx as nx
 import matplotlib.pyplot as plt
-from collections import deque
-
 
 class Node:
     def __init__(self, key, color="skyblue"):
@@ -39,24 +37,22 @@ def draw_tree(tree_root):
     nx.draw(tree, pos=pos, labels=labels, arrows=False, node_size=2500, node_color=colors)
     plt.show()
 
-def dfs_with_color_change(node):
-    if node is not None:
-        print(f"Visiting Node {node.val} - Color: {node.color}")
-        node.color = "yellow"  # Change color when visited
-        draw_tree(root)  # Call draw_tree to visualize the changes
-        dfs_with_color_change(node.left)
-        dfs_with_color_change(node.right)
+from collections import deque
 
-def bfs_with_color_change(node):
+def dfs(node):
+    if node is not None:
+        print(node.val, end=' ')
+        dfs(node.left)
+        dfs(node.right)
+
+def bfs(node):
     if node is None:
         return
 
     queue = deque([node])
     while queue:
         current = queue.popleft()
-        print(f"Visiting Node {current.val} - Color: {current.color}")
-        current.color = "yellow"  # Change color when visited
-        draw_tree(root)  # Call draw_tree to visualize the changes
+        print(current.val, end=' ')
         if current.left:
             queue.append(current.left)
         if current.right:
@@ -74,17 +70,7 @@ root.right.left = Node(3)
 draw_tree(root)
 
 # Example usage
-print("Depth-First Search (DFS) with Color Change:")
-dfs_with_color_change(root)
-
-# Reset colors to original for BFS
-root.color = "skyblue"
-root.left.color = "skyblue"
-root.right.color = "skyblue"
-root.left.left.color = "skyblue"
-root.left.right.color = "skyblue"
-root.right.left.color = "skyblue"
-draw_tree(root)  # Reset colors
-
-print("\n\nBreadth-First Search (BFS) with Color Change:")
-bfs_with_color_change(root)
+print("Depth-First Search (DFS):")
+dfs(root)
+print("\n\nBreadth-First Search (BFS):")
+bfs(root)
