@@ -1,3 +1,5 @@
+#Використовуючи draw tree, побудувати купу
+
 import uuid
 import networkx as nx
 import matplotlib.pyplot as plt
