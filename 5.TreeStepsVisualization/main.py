@@ -41,7 +41,7 @@ def draw_tree(tree_root):
 
 def dfs_with_color_change(node):
     if node is not None:
-        print(f"Visiting Node {node.val} - Color: {node.color}")
+        print(f"Visiting Node {node.val} - Color: 'yellow'")
         node.color = "yellow"  # Change color when visited
         draw_tree(root)  # Call draw_tree to visualize the changes
         dfs_with_color_change(node.left)
@@ -54,7 +54,7 @@ def bfs_with_color_change(node):
     queue = deque([node])
     while queue:
         current = queue.popleft()
-        print(f"Visiting Node {current.val} - Color: {current.color}")
+        print(f"Visiting Node {current.val} - Color: 'yellow'")
         current.color = "yellow"  # Change color when visited
         draw_tree(root)  # Call draw_tree to visualize the changes
         if current.left:
