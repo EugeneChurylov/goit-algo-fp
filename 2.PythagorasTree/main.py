@@ -15,10 +15,15 @@ def draw_pifagor_tree(branch_length, t, recursion_level):
 
 
 def main():
-    # Введення рівня рекурсії від користувача
-    recursion_level = int(input("Введіть рівень рекурсії: "))
+    print("Вітаю! Це програма для створення Дерева Піфагора.")
+    while True:
+        try:
+            # Введення рівня рекурсії від користувача
+            recursion_level = int(input("Щоб почати малювати, введіть рівень рекурсії: "))
+            break
+        except ValueError:
+            print("Будь ласка, введіть ціле число.")
 
-    # Налаштування вікна для візуалізації
     screen = turtle.Screen()
     screen.bgcolor("white")
 
@@ -33,10 +38,8 @@ def main():
     t.pendown()
     t.color("red")
 
-    # Виклик функції для малювання дерева Піфагора
     draw_pifagor_tree(200, t, recursion_level)
 
-    # Закриття вікна при кліку
     screen.exitonclick()
 
 
