@@ -13,6 +13,7 @@ def draw_pifagor_tree(branch_length, t, recursion_level):
         t.left(45)
         t.backward(branch_length)
 
+
 def main():
     # Введення рівня рекурсії від користувача
     recursion_level = int(input("Введіть рівень рекурсії: "))
@@ -37,6 +38,7 @@ def main():
 
     # Закриття вікна при кліку
     screen.exitonclick()
+
 
 if __name__ == "__main__":
     main()
