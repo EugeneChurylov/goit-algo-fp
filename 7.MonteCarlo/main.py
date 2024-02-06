@@ -16,9 +16,10 @@ def simulate_dice_rolls(num_rolls):
 
 
 def print_probabilities(probabilities):
-    print("Сума\tІмовірність")
+    print("| Сума | Імовірність MC |")
+    print("|------|-------------|")
     for i in range(2, 13):
-        print(f"{i}\t{probabilities[i]:.2f}% ({probabilities[i]/100:.2f})")
+        print(f"| {i} | {probabilities[i]:.2f}% ({probabilities[i]/100:.2f}) |")
 
 
 def plot_probabilities(probabilities):
