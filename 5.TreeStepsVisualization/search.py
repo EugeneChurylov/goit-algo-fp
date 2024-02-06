@@ -7,7 +7,7 @@ def dfs_with_color_change(node, depth=0, visited=None):
         visited = set()
 
     if node is not None and node not in visited:
-        print(f"Visiting Node {node.val}")
+        print(f"Переходимо на Node {node.val}")
         hue = 200.0
         saturation = 1.0
         value = 1.0 - (len(visited) * 0.19)
@@ -32,7 +32,7 @@ def bfs_with_color_change(node):
 
         current, depth = queue.popleft()
         if current not in visited:
-            print(f"Visiting Node {current.val}")
+            print(f"Переходимо на Node {current.val}")
             hue = 200.0
             saturation = 1.0
             value = 1.0 - (step * 0.16)

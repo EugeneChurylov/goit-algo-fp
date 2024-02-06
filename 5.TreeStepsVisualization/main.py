@@ -11,10 +11,10 @@ root.right = Node(1)
 root.right.left = Node(3)
 
 # Приклад використання
-print("Depth-First Search (DFS) with Color Change:")
+print("Алгоритм DFS:")
 dfs_with_color_change(root)
 draw_tree(root, "DFS")
 
-print("\nBreadth-First Search (BFS) with Color Change:")
+print("\nАлгоритм BFS:")
 bfs_with_color_change(root)
 draw_tree(root, "BFS")

@@ -27,7 +27,7 @@ def draw_tree(tree_root, graph_name):
     labels = {node[0]: node[1]["label"] for node in tree.nodes(data=True)}
 
     plt.figure(figsize=(8, 5))
-    plt.title(graph_name)
+    plt.title(graph_name, loc='left', y = 0.5, fontdict={'fontsize': 16, 'fontweight': 'bold', 'fontstyle': 'italic'}, color='#02084A')
     nx.draw(
         tree,
         pos=pos,
