@@ -18,7 +18,7 @@ def add_edges(graph, node, pos, x=0, y=0, layer=1):
     return graph
 
 
-def draw_tree(tree_root):
+def draw_tree(tree_root, graph_name):
     tree = nx.DiGraph()
     pos = {tree_root.id: (0, 0)}
     tree = add_edges(tree, tree_root, pos)
@@ -27,6 +27,7 @@ def draw_tree(tree_root):
     labels = {node[0]: node[1]["label"] for node in tree.nodes(data=True)}
 
     plt.figure(figsize=(8, 5))
+    plt.title(graph_name)
     nx.draw(
         tree,
         pos=pos,

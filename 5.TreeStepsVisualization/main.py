@@ -13,8 +13,8 @@ root.right.left = Node(3)
 # Приклад використання
 print("Depth-First Search (DFS) with Color Change:")
 dfs_with_color_change(root)
-draw_tree(root)
+draw_tree(root, "DFS")
 
 print("\nBreadth-First Search (BFS) with Color Change:")
 bfs_with_color_change(root)
-draw_tree(root)
+draw_tree(root, "BFS")
