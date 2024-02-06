@@ -19,7 +19,9 @@ def main():
     while True:
         try:
             # Введення рівня рекурсії від користувача
-            recursion_level = int(input("Щоб почати малювати, введіть рівень рекурсії: "))
+            recursion_level = int(
+                input("Щоб почати малювати, введіть рівень рекурсії: ")
+            )
             break
         except ValueError:
             print("Будь ласка, введіть ціле число.")

@@ -34,7 +34,7 @@ def plot_probabilities(probabilities):
 
 
 if __name__ == "__main__":
-    num_rolls = 1000000  # Задайте бажану кількість кидків
+    num_rolls = 1000000  # Кількість кидків гральних кубиків
 
     probabilities = simulate_dice_rolls(num_rolls)
 

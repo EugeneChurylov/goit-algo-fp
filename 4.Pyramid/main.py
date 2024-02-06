@@ -14,9 +14,7 @@ class Node:
 
 def add_edges(graph, node, pos, x=0, y=0, layer=1):
     if node is not None:
-        graph.add_node(
-            node.id, color=node.color, label=node.val
-        )  # Використання id та збереження значення вузла
+        graph.add_node(node.id, color=node.color, label=node.val)
         if node.left:
             graph.add_edge(node.id, node.left.id)
             l = x - 1 / 2**layer
@@ -36,9 +34,7 @@ def draw_tree(tree_root):
     tree = add_edges(tree, tree_root, pos)
 
     colors = [node[1]["color"] for node in tree.nodes(data=True)]
-    labels = {
-        node[0]: node[1]["label"] for node in tree.nodes(data=True)
-    }  # Використовуйте значення вузла для міток
+    labels = {node[0]: node[1]["label"] for node in tree.nodes(data=True)}
 
     plt.figure(figsize=(8, 5))
     nx.draw(
@@ -80,9 +76,9 @@ root.right = Node(1)
 root.right.left = Node(3)
 root.right.right = Node(50)
 
-# Відображаємо інуюче дерево
-draw_tree(root)
+# Відображаємо іcнуюче дерево (опціонально можна розкоментувати)
+# draw_tree(root)
 
-# Будуємо купу
+# Будуємо купу з існуючого дерева
 heapify(root)
 draw_tree(root)

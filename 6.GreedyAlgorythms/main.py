@@ -20,11 +20,9 @@ def dynamic_programming(items, budget):
     item_names = list(items.keys())
     num_items = len(item_names)
 
-    # Initialize a table to store the maximum calories and total cost for each subproblem
     dp_table = [[0] * (budget + 1) for _ in range(num_items + 1)]
     total_cost_table = [[0] * (budget + 1) for _ in range(num_items + 1)]
 
-    # Fill the table using dynamic programming approach
     for i in range(1, num_items + 1):
         for j in range(budget + 1):
             current_item = items[item_names[i - 1]]
@@ -48,7 +46,6 @@ def dynamic_programming(items, budget):
                 dp_table[i][j] = dp_table[i - 1][j]
                 total_cost_table[i][j] = total_cost_table[i - 1][j]
 
-    # Reconstruct the selected items
     selected_items = []
     remaining_budget = budget
     for i in range(num_items, 0, -1):
@@ -63,7 +60,6 @@ def dynamic_programming(items, budget):
     )
 
 
-# Example usage:
 items = {
     "pizza": {"cost": 50, "calories": 300},
     "hamburger": {"cost": 40, "calories": 250},
